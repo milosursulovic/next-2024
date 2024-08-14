@@ -3,7 +3,7 @@ import Link from "next/link";
 const HomePage = () => {
   return (
     <div>
-      <h1>Welcome to Traversy Media</h1>
+      <h1>Welcome</h1>
       <ul>
         <li>
           <Link href="/">Home</Link>
