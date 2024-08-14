@@ -3,7 +3,12 @@ import Link from "next/link";
 
 async function fetchRepos() {
   const response = await fetch(
-    "https://api.github.com/users/milosursulovic/repos"
+    "https://api.github.com/users/milosursulovic/repos",
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
   );
 
   await new Promise((resolve) => setTimeout(resolve, 1000));
