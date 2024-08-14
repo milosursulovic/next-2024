@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import LoadingPage from "./loading";
 import Courses from "./components/Courses";
+import CourseSearch from "./components/CourseSearch";
 
 const HomePage = () => {
   const [courses, setCourses] = useState([]);
@@ -16,7 +17,7 @@ const HomePage = () => {
     };
 
     fetchCourses();
-  });
+  }, []);
 
   if (loading) {
     return <LoadingPage />;
@@ -24,10 +25,10 @@ const HomePage = () => {
 
   return (
     <>
-      <h1>Welcome</h1>
+      <h1>Welcome To Traversy Media</h1>
+      <CourseSearch getSearchResults={(results) => setCourses(results)} />
       <Courses courses={courses} />
     </>
   );
 };
-
 export default HomePage;
